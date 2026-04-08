@@ -1,0 +1,173 @@
+// src/constants/services.ts
+
+export interface Service {
+  id: number;
+  title: string;
+  price: string;
+  image: string;
+  desc: string;
+  fullDetails: string;
+}
+
+export const ALL_SERVICES: Service[] = [
+  {
+    id: 1,
+    title: "BHS PEST CONTROL",
+    price: "Custom Quote",
+    image: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=800",
+    desc: "Eco-friendly, medical-grade pest elimination. We identify entry points and use non-toxic gels to protect your home year-round.",
+    fullDetails: "శీతాకాలంలో తెగుళ్లు సంతానోత్పత్తి మరియు వెచ్చదనం కోసం మీ నివాస స్థలాలలోకి చేరుకుంటాయి. BHS నిపుణులు ఈ సమస్యలను గుర్తించి, శాశ్వత పరిష్కారాలను అందిస్తారు. మా సేవల్లో స్ట్రక్చరల్ ఆడిట్ మరియు సేఫ్ జెల్ అప్లికేషన్ ఉంటాయి.",
+  },
+  {
+    id: 2,
+    title: "ఇల్లు శుభ్రపరచడం (HOUSE CLEANING)",
+    price: "Starts ₹1999",
+    image: "https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?q=80&w=800",
+    desc: "Complete deep sanitation for premium residential interiors. From living rooms to bedrooms, we ensure every corner is spotless.",
+    fullDetails: "BHS క్లీనింగ్ సర్వీసెస్‌తో మీ ఇంటిని ఆరోగ్యకరమైన ప్రదేశంగా మార్చండి. మా బృందం పర్యావరణ అనుకూలమైన ఉత్పత్తులను ఉపయోగిస్తుంది. డీప్ క్లీనింగ్, రెగ్యులర్ మెయింటెనెన్స్ మరియు ఈవెంట్ క్లీనింగ్ మా ప్రత్యేకత.",
+  },
+  {
+    id: 3,
+    title: "ROOFTOP WATER TANK CLEANING",
+    price: "₹999",
+    image: "https://images.unsplash.com/photo-1585704032915-c3400ca199e7?q=80&w=800",
+    desc: "6-stage automated cleaning including sludge removal and UV sterilization for pure, bacteria-free water storage.",
+    fullDetails: "Includes cleaning of one rooftop water tank (up to specified capacity). Removal of dirt, sludge, and impurities using safe agents. Excludes pipeline repairs or additional tank capacity.",
+  },
+  {
+    id: 4,
+    title: "ALL AC CLEANING SERVICES",
+    price: "₹999/-",
+    image: "https://plus.unsplash.com/premium_photo-1682126012378-859ca7a9f4cf?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8YWMlMjBjbGVhbmluZ3xlbnwwfHwwfHx8MA%3D%3D",
+    desc: "Deep foam cleaning for maximum cooling. We clean compressors, heat exchangers, and filters to improve airflow and air purity.",
+    fullDetails: "Our technicians inspect every unit regardless of brand. We use state-of-the-art tools to remove pet dander, street dust, and grease, ensuring your AC runs at maximum efficiency and consumes less energy.",
+  },
+  {
+    id: 5,
+    title: "CEILING FAN CLEANING SERVICE",
+    price: "₹99/-",
+    image: "https://images.unsplash.com/photo-1565814329452-e1efa11c5b89?q=80&w=800",
+    desc: "Industrial-grade blade detailing using anti-static wipes. We ensure thorough dust removal, grease cleaning, and motor hygiene.",
+    fullDetails: "Service Includes: Dry dusting for loose debris, chemical-based stain removal, and wet wiping with microfiber cloths. Our certified cleaners ensure your fans look and perform like new across major cities.",
+  },
+  {
+    id: 6,
+    title: "KITCHEN CLEANING SERVICE",
+    price: "₹1100-1499/-",
+    image: "https://images.unsplash.com/photo-1736433622548-4adbbc1c2cf2?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8a2l0Y2hlbiUyMGNsZWFuaW5nfGVufDB8fDB8fHww",
+    desc: "Professional degreasing of countertops, cabinets, and appliances. We use food-safe, eco-friendly products for a hygienic finish.",
+    fullDetails: "Available in Nellore and surrounding areas. We tackle heavy grease on chimney filters, exhaust fans, and stovetops. Our deep cleaning ensures a bacteria-free cooking environment for residential and commercial kitchens.",
+  },
+  {
+    id: 7,
+    title: "SOFA / BED CLEANING SERVICE",
+    price: "₹300-1500/-",
+    image: "https://images.unsplash.com/photo-1540574163026-643ea20ade25?q=80&w=800",
+    desc: "Advanced injection-suction technology for deep fabric extraction. Removes dust mites, allergens, and stubborn food stains.",
+    fullDetails: "Process Includes: Heavy-duty vacuuming of crevices, specialized shampooing to lift dirt, and targeted stain removal. We finish with sanitization to eliminate bacteria and pet odors from your upholstery.",
+  },
+  {
+    id: 8,
+    title: "BATHROOM CLEANING AMC",
+    price: "₹299/-",
+    image: "https://media.istockphoto.com/id/1417833200/photo/happy-professional-cleaners-cleaning-a-bathroom-at-an-apartment.webp?a=1&b=1&s=612x612&w=0&k=20&c=U6vW4wr51GQaa4BDlzZcC9Tb54xucwNranT5WL-yaE4=",
+    desc: "Annual Maintenance subscription for spotless bathrooms. Includes tile descaling, fixture polishing, and deep floor scrubbing.",
+    fullDetails: "AMC Benefit: Subscribe for ₹100/year to lock in a price of ₹299 per washroom cleaning. Our professionals use specific agents to tackle hard water stains and germs, ensuring a safe environment.",
+  },
+  {
+    id: 9,
+    title: "4BHK DEEP CLEANING SERVICE",
+    price: "₹11999/-",
+    image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=800",
+    desc: "The ultimate 8-hour detailing package for luxury homes. Multi-man crew covers every inch from balcony to kitchen cabinets.",
+    fullDetails: "Coverage: Machine scrubbing of floors, kitchen degreasing, bathroom descaling, and interior window detailing. Team: 3-4 trained professionals. Excludes wall painting or restoration work.",
+  },
+  {
+    id: 10,
+    title: "3BHK DEEP CLEANING SERVICE",
+    price: "₹8499/-",
+    image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=800",
+    desc: "Professional intensive cleaning for family homes. Includes wardrobe cleaning, fan/light dusting, and heavy-duty floor scrubbing.",
+    fullDetails: "Coverage: All bedrooms, kitchen, and common areas. We clean inside cabinets, scrub tile grout, and detail appliance exteriors. Duration: 5-7 hours with 2-3 trained members.",
+  },
+  {
+    id: 11,
+    title: "2BHK DEEP CLEANING SERVICE",
+    price: "₹6499/-",
+    image: "https://images.unsplash.com/photo-1484154218962-a197022b5858?q=80&w=800",
+    desc: "Full-scale sanitation for modern apartments. Deep cleaning of wardrobes, under-furniture areas, and specialized bathroom descaling.",
+    fullDetails: "Includes: Kitchen shelf scrubbing, floor mechanical cleaning, and carpet vacuuming. Team: 2 members. Duration: 5 hours. Excludes chandelier cleaning and non-tiled wall wiping.",
+  },
+  {
+    id: 12,
+    title: "1BHK DEEP CLEANING",
+    price: "₹2999/-",
+    image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=800",
+    desc: "Efficient and thorough cleaning for compact homes. Covers bedroom, hall, kitchen, and bathroom with industrial-grade chemicals.",
+    fullDetails: "Ideal for bachelors or couples. We focus on high-touch surfaces, floor sanitization, and basic kitchen degreasing to ensure your compact living space remains hygienic and dust-free.",
+  },
+  {
+    id: 13,
+    title: "CHIMNEY CLEANING",
+    price: "₹1500/-",
+    image: "https://images.unsplash.com/photo-1521207418485-99c705420785?q=80&w=800",
+    desc: "Complete dismantling and caustic-soda soaking of filters to remove heavy grease and restore powerful chimney suction.",
+    fullDetails: "We clean the inner housing, blower fan, and outer body. Regular cleaning reduces fire hazards and ensures your kitchen remains smoke-free during heavy cooking.",
+  },
+  {
+    id: 14,
+    title: "SOFA SHAMPOO WASH",
+    price: "₹450/-",
+    image: "https://images.unsplash.com/photo-1556020685-ae41abfc9365?q=80&w=800",
+    desc: "Localized fabric washing per seat. Removes food spills, organic stains, and pet odors while restoring fabric color and texture.",
+    fullDetails: "Our process uses high-foaming detergents and extraction machines to pull dirt from deep within the cushion fibers, leaving your sofa fresh and slightly damp (dries in 4-6 hours).",
+  },
+  {
+    id: 15,
+    title: "FLOOR HIGH GLASS POLISHING",
+    price: "₹5/sq.ft",
+    image: "https://images.unsplash.com/photo-1581858726788-75bc0f6a952d?q=80&w=800",
+    desc: "Mechanical buffing for Marble, Granite, and Vitrified tiles. Restores original shine and removes minor surface scratches.",
+    fullDetails: "We use industrial-grade polishing pads and specialized crystallization chemicals to achieve a mirror-like finish. Pricing is based on a minimum area requirement.",
+  },
+  {
+    id: 16,
+    title: "FRIDGE CLEANING",
+    price: "₹299/-",
+    image: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=800",
+    desc: "Internal tray sanitization and fungus removal from door gaskets. We use food-safe agents to eliminate stubborn food odors.",
+    fullDetails: "Includes cleaning of all removable compartments, external body wiping, and back-coil dusting to improve cooling efficiency and food safety.",
+  },
+  {
+    id: 17,
+    title: "CUPBOARD CLEANING",
+    price: "Custom Quote",
+    image: "https://media.istockphoto.com/id/1294314456/photo/hands-of-a-janitor-cleaning-the-microwave.webp?a=1&b=1&s=612x612&w=0&k=20&c=ycKyzVDXENJG7Kg9UJxJj2RAZWXADsQozVxl1QABbSg=",
+    desc: "Internal and external detailing of storage units. Includes anti-termite treatment for wood and polishing of laminate finishes.",
+    fullDetails: "We empty the units, vacuum interiors, and perform wet wiping of every shelf. Perfect for seasonal cleaning or when moving into a new home.",
+  },
+  {
+    id: 18,
+    title: "MICROWAVE OVEN CLEANING",
+    price: "₹299/-",
+    image: "https://media.istockphoto.com/id/1294314456/photo/hands-of-a-janitor-cleaning-the-microwave.webp?a=1&b=1&s=612x612&w=0&k=20&c=ycKyzVDXENJG7Kg9UJxJj2RAZWXADsQozVxl1QABbSg=",
+    desc: "Steam-based degreasing of heating chambers. Removes burnt-on food and ensures your appliance is hygienic for daily use.",
+    fullDetails: "Includes cleaning of the glass turntable, interior walls, and control panel. We avoid harsh chemicals to ensure no toxic residue remains in your food prep area.",
+  },
+  {
+    id: 20,
+    title: "OFFICE & TOILET CLEANING",
+    price: "Starts ₹199",
+    image: "https://images.unsplash.com/photo-1497366754035-f200968a6e72?q=80&w=800",
+    desc: "Professional janitorial solutions for workspaces and high-traffic toilets. We ensure 99.9% germ elimination and zero odor.",
+    fullDetails: "Includes floor scrubbing, workstation sanitization, and deep cleaning of sanitary ware using concentrated disinfectants. Ideal for corporate environments.",
+  },
+  {
+    id: 21,
+    title: "VACUUM CLEANING SERVICES",
+    price: "Starts ₹499",
+    image: "https://images.unsplash.com/photo-1528740561666-dc2479dc08ab?q=80&w=800",
+    desc: "HEPA-standard dust extraction for curtains, mattresses, and carpets. Essential for allergy prevention in modern homes.",
+    fullDetails: "Our heavy-duty vacuum machines pull dust from deep within upholstery and hard-to-reach corners, significantly improving indoor air quality.",
+  },
+];
