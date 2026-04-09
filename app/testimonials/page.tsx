@@ -87,21 +87,6 @@ const TestimonialsPage = () => {
             </motion.div>
           ))}
         </div>
-
-        {/* Bottom Call to Action */}
-        <section className="mt-32 p-12 md:p-24 bg-green-600 rounded-[3rem] text-white flex flex-col md:flex-row items-center justify-between gap-12 overflow-hidden relative">
-            <div className="relative z-10">
-                <h3 className="text-4xl md:text-7xl font-black uppercase tracking-tighter leading-none mb-6">
-                    Start Your <br /> <span className="text-green-900">Success Story.</span>
-                </h3>
-                <p className="text-green-100 uppercase tracking-widest text-[10px] font-bold">
-                    Join hundreds of satisfied clients in Andhra Pradesh.
-                </p>
-            </div>
-
-            {/* Decorative background circle */}
-            <div className="absolute -bottom-24 -right-24 w-96 h-96 bg-green-500 rounded-full opacity-50 blur-3xl" />
-        </section>
       </div>
     </main>
   );
