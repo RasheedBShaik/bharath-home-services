@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import React, { useState, useEffect } from "react";
 import { FaPhoneAlt, FaMapMarkerAlt } from "react-icons/fa";
 
@@ -65,9 +66,11 @@ const Footer: React.FC<FooterProps> = ({ gtReady }) => {
     <footer className="bg-black text-white pt-16 pb-8 px-6 border-t border-white/10">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
         <div className="flex flex-col gap-6">
-          <div className="font-bold text-2xl tracking-tighter border-2 border-white w-fit px-3 py-1">
-            BHS
-          </div>
+          <Link href="/#top">
+            <div className="font-bold text-2xl tracking-tighter border-2 border-white w-fit px-3 py-1">
+              BHS
+            </div>
+          </Link>
           <p className="text-gray-400 text-sm leading-relaxed max-w-xs">
             Your trusted multi-service partner for a better living experience.
           </p>
@@ -120,9 +123,7 @@ const Footer: React.FC<FooterProps> = ({ gtReady }) => {
                 {/* shrink-0 ensures the icon stays perfectly round/square even if text wraps */}
                 <FaPhoneAlt className="text-gray-400 shrink-0 group-hover:text-green-500 transition-colors size-4" />
 
-                <span className=" text-sm">
-                  +91 89858 33307
-                </span>
+                <span className=" text-sm">+91 89858 33307</span>
               </div>
             </a>
           </div>
