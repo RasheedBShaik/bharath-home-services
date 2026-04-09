@@ -61,11 +61,11 @@ const ServicesHome = () => {
                 <img 
                   src={service.image} 
                   alt={service.title} 
-                  className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700" 
+                  className="w-full h-full object-cover md:grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700" 
                 />
               </div>
 
-              <div className="flex flex-col flex-grow">
+              <div className="flex flex-col grow">
                 <div className="flex justify-between items-start mb-4">
                   <h3 className="font-black uppercase text-xl tracking-tighter leading-none text-neutral-900 group-hover:text-green-600">
                     {service.title}
@@ -73,7 +73,7 @@ const ServicesHome = () => {
                   <Plus size={18} className="text-neutral-300 group-hover:rotate-90 group-hover:text-green-600 transition-all" />
                 </div>
                 <div className="flex items-center gap-2 mb-4">
-                   <div className="h-[1px] w-4 bg-green-500" />
+                   <div className="h-px w-4 bg-green-500" />
                    <p className="text-[10px] text-green-600 font-black uppercase tracking-widest">{service.price}</p>
                 </div>
                 <p className="text-[12px] leading-relaxed text-neutral-400 font-medium line-clamp-3">
@@ -88,7 +88,7 @@ const ServicesHome = () => {
         {/* 3. THE BOOKING MODAL */}
         <AnimatePresence>
           {selectedService && (
-            <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
+            <div className="fixed inset-0 z-100 flex items-center justify-center p-4">
               {/* Overlay */}
               <motion.div 
                 initial={{ opacity: 0 }} 

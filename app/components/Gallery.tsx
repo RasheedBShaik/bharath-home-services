@@ -51,7 +51,7 @@ const HomeStackGallery = () => {
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 mb-8 md:mb-12">
           <div>
             <div className="flex items-center gap-2 text-green-600 mb-2">
-              <div className="w-8 h-[1px] bg-green-600" />
+              <div className="w-8 h-px bg-green-600" />
               <span className="font-bold uppercase tracking-widest text-[10px]">
                 Project Archive
               </span>
@@ -71,7 +71,7 @@ const HomeStackGallery = () => {
             >
               <ArrowLeft size={18} />
             </button>
-            <span className="text-sm font-black tabular-nums min-w-[50px] text-center">
+            <span className="text-sm font-black tabular-nums min-w-12.5 text-center">
               {imageIndex + 1} / {G_IMAGES.length}
             </span>
             <button
@@ -85,7 +85,7 @@ const HomeStackGallery = () => {
         </div>
 
         {/* VIEWPORT CONTAINER */}
-        <div className="relative h-[550px] md:h-auto md:aspect-[21/9] w-full max-w-5xl mx-auto touch-pan-y">
+        <div className="relative h-137.5 md:h-auto md:aspect-21/9 w-full max-w-5xl mx-auto touch-pan-y">
           <AnimatePresence initial={false} custom={direction} mode="popLayout">
             <motion.div
               key={page}
@@ -110,7 +110,7 @@ const HomeStackGallery = () => {
               className="absolute inset-0 bg-white border border-neutral-100 shadow-2xl flex flex-col md:flex-row group overflow-hidden cursor-grab active:cursor-grabbing"
             >
               {/* IMAGE PART - Height fixed on mobile */}
-              <div className="relative w-full h-[250px] md:h-full md:w-2/3 bg-neutral-100 overflow-hidden shrink-0">
+              <div className="relative w-full h-62.5 md:h-full md:w-2/3 bg-neutral-100 overflow-hidden shrink-0">
                 <img
                   src={G_IMAGES[imageIndex].url}
                   className="w-full h-full object-cover pointer-events-none"
