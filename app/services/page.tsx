@@ -44,12 +44,12 @@ const ServicesPage = () => {
               key={service.id} 
               className="group relative bg-white border border-neutral-200 overflow-hidden transition-all duration-300 hover:border-black"
             >
-              <div className="flex flex-col md:flex-row min-h-[300px]">
+              <div className="flex flex-col md:flex-row min-h-75">
                 
                 {/* LEFT: IMAGE SECTION */}
                 <div 
                   onClick={() => setSelectedService(service)}
-                  className="w-full md:w-[400px] shrink-0 overflow-hidden grayscale group-hover:grayscale-0 transition-all duration-700 cursor-pointer relative"
+                  className="w-full md:w-100 shrink-0 overflow-hidden md:grayscale group-hover:grayscale-0 transition-all duration-700 cursor-pointer relative"
                 >
                   <img 
                     src={service.image} 
@@ -123,7 +123,7 @@ const ServicesPage = () => {
       {/* MODAL SYSTEM (Inherited from previous) */}
       <AnimatePresence>
         {selectedService && (
-          <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
+          <div className="fixed inset-0 z-100 flex items-center justify-center p-4">
             <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} onClick={closeModal} className="absolute inset-0 bg-neutral-900/95 backdrop-blur-md" />
             <motion.div initial={{ y: 40, opacity: 0 }} animate={{ y: 0, opacity: 1 }} exit={{ y: 40, opacity: 0 }} className="relative bg-white w-full max-w-xl shadow-2xl rounded-sm">
                <button onClick={closeModal} className="absolute top-8 right-8 text-neutral-400 hover:text-black transition-colors"><X size={28} /></button>
