@@ -104,7 +104,7 @@ const Modal = ({ service, close }: any) => (
     initial={{ opacity: 0 }}
     animate={{ opacity: 1 }}
     exit={{ opacity: 0 }}
-    className="fixed inset-0 z-[100] flex items-center justify-center bg-slate-950/80 backdrop-blur-md p-6"
+    className="fixed inset-0 z-100 flex items-center justify-center bg-slate-950/80 backdrop-blur-md p-6"
   >
     <motion.div
       initial={{ y: 50, opacity: 0, scale: 0.95 }}
