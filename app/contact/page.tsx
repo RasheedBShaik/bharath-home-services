@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import { motion, Variants } from "framer-motion";
 import { Mail, Phone, MapPin, Clock, Send } from "lucide-react";
 
 const Contact = () => {
@@ -10,66 +11,140 @@ const Contact = () => {
     { icon: <Clock size={20} />, label: "Hours", text: "8:00 AM - 8:00 PM" },
   ];
 
+  // Animation Variants
+  const containerVars: Variants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: { staggerChildren: 0.1, delayChildren: 0.2 }
+    }
+  };
+
+  const itemVars: Variants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { 
+      opacity: 1, 
+      y: 0, 
+      transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] } 
+    }
+  };
+
   return (
-    <section className="py-24 bg-white text-black px-6">
-      <div className="max-w-7xl py-6 mx-auto flex flex-col gap-16">
-        <h2 className="text-4xl font-black uppercase tracking-tighter text-center text-black">Contact Us</h2>
+    <section className="py-32 bg-white text-black px-6 overflow-hidden">
+      <div className="max-w-7xl mx-auto flex flex-col gap-24">
         
-        {/* 1. TOP CARDS: Quick Info */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-          {info.map((item, i) => (
-            <div key={i} className="p-6 border border-gray-100 bg-gray-50/50 rounded-xl flex flex-col items-center text-center group hover:border-green-400 transition-colors">
-              <div className="text-green-500 mb-3 group-hover:scale-110 transition-transform">{item.icon}</div>
-              <span className="text-[10px] uppercase tracking-[0.2em] font-bold text-gray-400 mb-1">{item.label}</span>
-              <p className="text-sm font-semibold">{item.text}</p>
-            </div>
-          ))}
-        </div>
-
-        {/* 2. MIDDLE: Contact Form */}
-        <div className="w-full max-w-3xl mx-auto">
-          <div className="text-center mb-10">
-            <h2 className="text-4xl font-black uppercase tracking-tighter text-black">Get In Touch</h2>
-            <p className="text-gray-500 mt-2">Send us a message and we'll reply within 24 hours.</p>
+        {/* --- HEADER --- */}
+        <div className="text-left border-b border-neutral-100 pb-12">
+          <div className="overflow-hidden">
+            <motion.h1 
+              initial={{ y: "100%" }}
+              animate={{ y: 0 }}
+              transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+              className="text-6xl md:text-[10rem] font-black uppercase tracking-tighter leading-[0.85]"
+            >
+              Get In <span className="text-green-600">Touch</span>
+            </motion.h1>
           </div>
-          
-          <form className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <input type="text" placeholder="Name" className="p-4 bg-gray-50 border-none rounded-lg focus:ring-2 focus:ring-green-400 outline-none" />
-            <input type="email" placeholder="Email" className="p-4 bg-gray-50 border-none rounded-lg focus:ring-2 focus:ring-green-400 outline-none" />
-            
-            {/* Replaced duplicate Email with Phone Number */}
-            <input type="tel" placeholder="Phone Number" className="md:col-span-2 p-4 bg-gray-50 border-none rounded-lg focus:ring-2 focus:ring-green-400 outline-none" />
-            
-            <textarea placeholder="How can we help?" className="md:col-span-2 p-4 bg-gray-50 border-none rounded-lg h-32 focus:ring-2 focus:ring-green-400 outline-none resize-none"></textarea>
-            
-            <button className="md:col-span-2 py-4 bg-black text-white font-bold uppercase tracking-widest rounded-lg flex items-center justify-center gap-2 hover:bg-green-500 hover:text-black transition-all">
-              <Send size={18} /> Send Message
-            </button>
-          </form>
+          <motion.p 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.6 }}
+            className="mt-8 text-neutral-500 font-bold uppercase tracking-widest text-xs"
+          >
+            Available for projects across Andhra Pradesh. Reply within 24 hours.
+          </motion.p>
         </div>
 
-        {/* 3. BOTTOM: Full-Width Map */}
-        <div className="w-full h-112.5 rounded-3xl overflow-hidden shadow-sm border border-gray-100 relative">
+        {/* --- TOP CARDS: Quick Info --- */}
+        <motion.div 
+          variants={containerVars}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4"
+        >
+          {info.map((item, i) => (
+            <motion.div 
+              key={i} 
+              variants={itemVars}
+              className="p-8 border border-neutral-100 bg-neutral-50/50 rounded-2xl flex flex-col items-start group hover:bg-neutral-900 transition-all duration-500"
+            >
+              <div className="text-green-600 mb-6 group-hover:scale-110 group-hover:text-green-400 transition-all">
+                {item.icon}
+              </div>
+              <span className="text-[10px] uppercase tracking-[0.2em] font-black text-neutral-400 mb-2 group-hover:text-neutral-500">
+                {item.label}
+              </span>
+              <p className="text-sm font-bold group-hover:text-white transition-colors">
+                {item.text}
+              </p>
+            </motion.div>
+          ))}
+        </motion.div>
+
+        {/* --- CONTACT FORM --- */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-4xl font-black uppercase tracking-tighter mb-6">Let's build <br/> something <span className="text-green-600">Great.</span></h2>
+            <p className="text-neutral-500 leading-relaxed max-w-md">
+              Whether it's a luxury residential project or a large-scale commercial development, our team is ready to bring your vision to life.
+            </p>
+          </motion.div>
+
+          <motion.form 
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="grid grid-cols-1 md:grid-cols-2 gap-4"
+          >
+            <input type="text" placeholder="Your Name" className="p-5 bg-neutral-50 border border-neutral-100 rounded-xl focus:ring-1 focus:ring-green-500 outline-none transition-all placeholder:text-neutral-400 placeholder:uppercase placeholder:text-[10px] placeholder:font-bold placeholder:tracking-widest" />
+            <input type="email" placeholder="Email Address" className="p-5 bg-neutral-50 border border-neutral-100 rounded-xl focus:ring-1 focus:ring-green-500 outline-none transition-all placeholder:text-neutral-400 placeholder:uppercase placeholder:text-[10px] placeholder:font-bold placeholder:tracking-widest" />
+            <input type="tel" placeholder="Phone Number" className="md:col-span-2 p-5 bg-neutral-50 border border-neutral-100 rounded-xl focus:ring-1 focus:ring-green-500 outline-none transition-all placeholder:text-neutral-400 placeholder:uppercase placeholder:text-[10px] placeholder:font-bold placeholder:tracking-widest" />
+            <textarea placeholder="Tell us about your project" className="md:col-span-2 p-5 bg-neutral-50 border border-neutral-100 rounded-xl h-40 focus:ring-1 focus:ring-green-500 outline-none resize-none transition-all placeholder:text-neutral-400 placeholder:uppercase placeholder:text-[10px] placeholder:font-bold placeholder:tracking-widest"></textarea>
+            
+            <motion.button 
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              className="md:col-span-2 py-5 bg-neutral-900 text-white font-black uppercase tracking-[0.2em] text-[10px] rounded-xl flex items-center justify-center gap-3 hover:bg-green-600 transition-all shadow-xl"
+            >
+              <Send size={14} /> Send Inquiry
+            </motion.button>
+          </motion.form>
+        </div>
+
+        {/* --- MAP --- */}
+        <motion.div 
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
+          viewport={{ once: true }}
+          className="w-full h-125 rounded-[2.5rem] overflow-hidden shadow-2xl border border-neutral-100 relative group"
+        >
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3862.964724497334!2d79.9723381!3d14.4579979!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a4c8cc3894200c5%3A0xc47e3352723c3182!2sSavitri%20Nagar%2C%20Nellore%2C%20Andhra%20Pradesh%20524004!5e0!3m2!1sen!2sin!4v1712411234567"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3875.55048256346!2d79.9824!3d14.4447!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTTCsDI2JzQxLjAiTiA3OcKwNTgnNTYuNiJF!5e0!3m2!1sen!2sin!4v1715000000000!5m2!1sen!2sin"
             width="100%"
             height="100%"
             style={{ border: 0 }}
             loading="lazy"
-            className="grayscale hover:grayscale-0 transition-all duration-700"
+            className="transition-all duration-1000 ease-in-out scale-105 group-hover:scale-100"
           ></iframe>
           
-          {/* Overlay Floating Tag */}
-          <div className="absolute bottom-6 left-6 bg-white p-4 rounded-xl shadow-xl flex items-center gap-3">
-             <div className="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center text-green-600">
-                <MapPin size={20} />
+          <div className="absolute top-8 left-8 bg-white/90 backdrop-blur-md p-6 rounded-2xl shadow-2xl flex items-center gap-4 border border-white">
+             <div className="w-12 h-12 bg-green-600 rounded-xl flex items-center justify-center text-white shadow-lg">
+                <MapPin size={24} />
              </div>
              <div>
-                <p className="text-xs font-bold uppercase tracking-tighter text-black">Bharath Home Services</p>
-                <p className="text-[10px] text-gray-500 leading-none">Savitri Nagar, Nellore</p>
+                <p className="text-sm font-black uppercase tracking-tighter text-black">Bharath Home Services</p>
+                <p className="text-[10px] font-bold text-neutral-500 uppercase tracking-widest">Savitri Nagar, Nellore</p>
              </div>
           </div>
-        </div>
+        </motion.div>
 
       </div>
     </section>

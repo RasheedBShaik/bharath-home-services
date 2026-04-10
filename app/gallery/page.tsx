@@ -51,23 +51,45 @@ const StackGallery = () => {
   return (
     // min-h-[100dvh] ensures it fills the dynamic mobile viewport
     <div className="bg-white  relative overflow-hidden flex flex-col pt-32 pb-24">
-      
       {/* HEADER - Tighter on mobile */}
-      <div className="px-6 md:px-20 mb-4 md:mb-8 relative z-20">
-        <h1 className="text-4xl md:text-8xl font-black uppercase tracking-tighter leading-none">
-          Our <span className="text-green-600 ">Image</span> Gallery
-        </h1>
+      <div className="px-6 md:px-20 mb-12 relative z-20">
+        <div className="overflow-hidden py-2">
+          <motion.h1
+            initial={{ y: "100%" }}
+            animate={{ y: 0 }}
+            transition={{
+              duration: 1.2,
+              ease: [0.16, 1, 0.3, 1], // Custom cinematic cubic-bezier
+              delay: 0.2,
+            }}
+            className="text-5xl md:text-9xl font-black uppercase tracking-tighter leading-none"
+          >
+            Our <span className="text-green-600 outline-text">Image</span>{" "}
+            Gallery
+          </motion.h1>
+        </div>
+
+        {/* Optional: Add a sliding accent line for extra flair */}
+        <motion.div
+          initial={{ scaleX: 0 }}
+          animate={{ scaleX: 1 }}
+          transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1], delay: 0.8 }}
+          className="h-1 w-24 bg-green-600 origin-left mt-4"
+        />
       </div>
 
       <div className="relative grow flex items-center justify-center px-4 md:px-0">
-        
         {/* SIDE PREVIEWS - Hidden on small screens */}
         {imageIndex > 0 && (
           <button
             onClick={() => paginate(-1)}
             className="absolute left-10 max-w-2xl aspect-video w-1/4 opacity-20 hover:opacity-60 transition-opacity hidden xl:block grayscale scale-75 -rotate-12 border border-neutral-200 bg-neutral-50 overflow-hidden z-0"
           >
-            <img src={G_IMAGES[imageIndex - 1].url} className="w-full h-full object-cover" alt="prev" />
+            <img
+              src={G_IMAGES[imageIndex - 1].url}
+              className="w-full h-full object-cover"
+              alt="prev"
+            />
           </button>
         )}
 
@@ -91,7 +113,7 @@ const StackGallery = () => {
               }}
               className="absolute inset-0 bg-white border border-neutral-200 shadow-2xl flex flex-col group cursor-grab active:cursor-grabbing overflow-hidden rounded-xl md:rounded-sm"
             >
-              <div 
+              <div
                 className="relative grow overflow-hidden bg-neutral-100"
                 onClick={() => setIsFullscreen(true)}
               >
@@ -122,7 +144,11 @@ const StackGallery = () => {
             onClick={() => paginate(1)}
             className="absolute right-10 max-w-2xl aspect-video w-1/4 opacity-20 hover:opacity-60 transition-opacity hidden xl:block grayscale scale-75 rotate-12 border border-neutral-200 bg-neutral-50 overflow-hidden z-0"
           >
-            <img src={G_IMAGES[imageIndex + 1].url} className="w-full h-full object-cover" alt="next" />
+            <img
+              src={G_IMAGES[imageIndex + 1].url}
+              className="w-full h-full object-cover"
+              alt="next"
+            />
           </button>
         )}
       </div>
@@ -134,7 +160,9 @@ const StackGallery = () => {
             onClick={() => paginate(-1)}
             disabled={imageIndex === 0}
             className={`p-5 md:p-6 rounded-full border transition-all active:scale-95 ${
-              imageIndex === 0 ? "opacity-20 pointer-events-none" : "border-neutral-200 bg-neutral-50 hover:bg-neutral-900 hover:text-white"
+              imageIndex === 0
+                ? "opacity-20 pointer-events-none"
+                : "border-neutral-200 bg-neutral-50 hover:bg-neutral-900 hover:text-white"
             }`}
           >
             <ArrowLeft size={24} />
@@ -142,12 +170,15 @@ const StackGallery = () => {
 
           <div className="text-center min-w-20">
             <p className="text-neutral-900 font-black text-2xl tracking-tighter tabular-nums">
-              {imageIndex + 1} <span className="text-neutral-300">/ {G_IMAGES.length}</span>
+              {imageIndex + 1}{" "}
+              <span className="text-neutral-300">/ {G_IMAGES.length}</span>
             </p>
             <div className="w-full h-0.75 bg-neutral-100 mt-2 rounded-full overflow-hidden">
               <motion.div
                 className="h-full bg-green-500"
-                animate={{ width: `${((imageIndex + 1) / G_IMAGES.length) * 100}%` }}
+                animate={{
+                  width: `${((imageIndex + 1) / G_IMAGES.length) * 100}%`,
+                }}
               />
             </div>
           </div>
@@ -156,7 +187,9 @@ const StackGallery = () => {
             onClick={() => paginate(1)}
             disabled={imageIndex === G_IMAGES.length - 1}
             className={`p-5 md:p-6 rounded-full border transition-all active:scale-95 ${
-              imageIndex === G_IMAGES.length - 1 ? "opacity-20 pointer-events-none" : "border-neutral-200 bg-neutral-50 hover:bg-neutral-900 hover:text-white"
+              imageIndex === G_IMAGES.length - 1
+                ? "opacity-20 pointer-events-none"
+                : "border-neutral-200 bg-neutral-50 hover:bg-neutral-900 hover:text-white"
             }`}
           >
             <ArrowRight size={24} />
@@ -167,20 +200,20 @@ const StackGallery = () => {
       {/* FULLSCREEN MODAL - Swipe enabled */}
       <AnimatePresence>
         {isFullscreen && (
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             className="fixed inset-0 z-200 bg-white flex flex-col"
           >
-            <button 
-              onClick={() => setIsFullscreen(false)} 
+            <button
+              onClick={() => setIsFullscreen(false)}
               className="absolute top-6 right-6 text-neutral-900 z-210 p-4 bg-neutral-100 rounded-full"
             >
               <X size={24} />
             </button>
 
-            <motion.div 
+            <motion.div
               className="grow flex flex-col items-center justify-center p-4 touch-none"
               drag="x"
               dragConstraints={{ left: 0, right: 0 }}
@@ -190,12 +223,12 @@ const StackGallery = () => {
                 else if (swipe > swipeConfidenceThreshold) paginate(-1);
               }}
             >
-              <motion.img 
+              <motion.img
                 key={imageIndex}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                src={G_IMAGES[imageIndex].url} 
-                className="max-w-full max-h-[70vh] object-contain shadow-2xl rounded-lg" 
+                src={G_IMAGES[imageIndex].url}
+                className="max-w-full max-h-[70vh] object-contain shadow-2xl rounded-lg"
               />
               <div className="mt-8 text-center px-6">
                 <h2 className="text-3xl font-black text-neutral-900 uppercase tracking-tighter">

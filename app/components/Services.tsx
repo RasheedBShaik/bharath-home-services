@@ -1,181 +1,164 @@
 "use client";
 import React, { useState } from "react";
-import Link from "next/link";
 import { ALL_SERVICES } from "@/data/services";
-import { ArrowRight, Plus, X, Check } from "lucide-react";
+import { X, ChevronRight, ArrowRight, ShieldCheck } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import Link from "next/link";
 
 const ServicesHome = () => {
-  // 1. STATE MANAGEMENT
   const [selectedService, setSelectedService] = useState<any>(null);
-  const [isSubmitted, setIsSubmitted] = useState(false);
-
-  // 2. HANDLERS
-  const openModal = (service: any) => {
-    setSelectedService(service);
-    setIsSubmitted(false);
-  };
-
-  const closeModal = () => {
-    setSelectedService(null);
-  };
-
-  const handleBooking = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Simulate API call
-    setIsSubmitted(true);
-  };
-
-  const homeServices = ALL_SERVICES.slice(0, 8);
 
   return (
-    <section className="bg-white py-32 px-6 md:px-12 border-t border-neutral-100">
-      <div className="max-w-7xl mx-auto">
-        
-        {/* Header Section */}
-        <div className="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
+    <section className="bg-white py-32 px-6 md:px-12 relative overflow-hidden">
+      {/* Subtle Background Accent */}
+      <div className="absolute top-0 right-0 w-1/3 h-full bg-slate-50/50 -skew-x-12 translate-x-1/2 pointer-events-none" />
+
+      <div className="max-w-7xl mx-auto relative z-10">
+        {/* --- Header Section --- */}
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-10 mb-24">
           <div className="max-w-2xl">
-            <span className="text-green-600 font-black uppercase tracking-[0.4em] text-[10px] mb-4 block">Our Expertise</span>
-            <h2 className="text-6xl md:text-8xl font-black uppercase tracking-tighter leading-[0.85] text-neutral-900">
-              Modern <br/> <span className="text-neutral-400">Solutions</span>
+            <motion.div 
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="flex items-center gap-3 text-green-600 mb-6"
+            >
+              <div className="w-12 h-0.5 bg-green-600" />
+              <span className="font-black uppercase tracking-[0.4em] text-[10px]">
+                Our Expertise
+              </span>
+            </motion.div>
+            
+            <h2 className="text-6xl md:text-8xl font-black uppercase tracking-tighter leading-[0.85] text-slate-900">
+              Elite <br />
+              <span className="text-transparent" style={{ WebkitTextStroke: "1px #0f172a" }}>Solutions.</span>
             </h2>
           </div>
-          <Link 
-            href="/services" 
-            className="group flex items-center gap-4 text-[11px] font-black uppercase tracking-[0.2em] bg-black text-white px-8 py-4 hover:bg-green-600 transition-all"
-          >
-            Explore 20+ Services 
-            <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
-          </Link>
+
+          <p className="text-slate-500 font-medium max-w-xs leading-relaxed border-l-2 border-slate-100 pl-6 hidden md:block">
+            Professional-grade craftsmanship delivered to every corner of your residence in Andhra Pradesh.
+          </p>
         </div>
 
-        {/* Services Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-neutral-200 border border-neutral-200">
-          {homeServices.map((service) => (
-            <div 
-              key={service.id} 
-              onClick={() => openModal(service)} // TRIGGER MODAL
-              className="cursor-pointer group relative bg-white p-8 hover:bg-neutral-50 transition-all flex flex-col h-full overflow-hidden"
+        {/* --- High-End List Grid --- */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-16 gap-y-4">
+          {ALL_SERVICES.slice(0, 6).map((service, index) => (
+            <motion.div
+              key={service.id}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.05, duration: 0.6 }}
+              onClick={() => setSelectedService(service)}
+              className="group cursor-pointer flex items-center justify-between py-8 border-b border-slate-100 hover:border-green-500 transition-all duration-500"
             >
-              <div className="aspect-square overflow-hidden mb-8 relative">
-                <img 
-                  src={service.image} 
-                  alt={service.title} 
-                  className="w-full h-full object-cover md:grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700" 
-                />
-              </div>
-
-              <div className="flex flex-col grow">
-                <div className="flex justify-between items-start mb-4">
-                  <h3 className="font-black uppercase text-xl tracking-tighter leading-none text-neutral-900 group-hover:text-green-600">
+              <div className="flex items-center gap-8">
+                <span className="text-slate-300 font-black text-xl group-hover:text-green-500 transition-colors">
+                  0{index + 1}
+                </span>
+                <div>
+                  <h3 className="text-2xl font-black uppercase tracking-tight text-slate-900 group-hover:translate-x-2 transition-transform duration-500">
                     {service.title}
                   </h3>
-                  <Plus size={18} className="text-neutral-300 group-hover:rotate-90 group-hover:text-green-600 transition-all" />
+                  <p className="text-slate-400 text-xs font-bold uppercase tracking-widest mt-1">
+                    Certified Expert Handling
+                  </p>
                 </div>
-                <div className="flex items-center gap-2 mb-4">
-                   <div className="h-px w-4 bg-green-500" />
-                   <p className="text-[10px] text-green-600 font-black uppercase tracking-widest">{service.price}</p>
-                </div>
-                <p className="text-[12px] leading-relaxed text-neutral-400 font-medium line-clamp-3">
-                  {service.desc}
-                </p>
               </div>
-              <div className="absolute top-0 right-0 w-8 h-8 border-t-4 border-r-4 border-green-500 opacity-0 group-hover:opacity-100 transition-all translate-x-2 -translate-y-2 group-hover:translate-x-0 group-hover:translate-y-0" />
-            </div>
+
+              <div className="relative overflow-hidden w-12 h-12 rounded-full bg-slate-900 flex items-center justify-center text-white group-hover:bg-green-600 group-hover:rotate-45 transition-all duration-500">
+                <ChevronRight size={20} />
+              </div>
+            </motion.div>
           ))}
         </div>
 
-        {/* 3. THE BOOKING MODAL */}
-        <AnimatePresence>
-          {selectedService && (
-            <div className="fixed inset-0 z-100 flex items-center justify-center p-4">
-              {/* Overlay */}
-              <motion.div 
-                initial={{ opacity: 0 }} 
-                animate={{ opacity: 1 }} 
-                exit={{ opacity: 0 }} 
-                onClick={closeModal} 
-                className="absolute inset-0 bg-neutral-900/95 backdrop-blur-md" 
-              />
-              
-              {/* Modal Content */}
-              <motion.div 
-                initial={{ y: 40, opacity: 0 }} 
-                animate={{ y: 0, opacity: 1 }} 
-                exit={{ y: 40, opacity: 0 }} 
-                className="relative bg-white w-full max-w-xl shadow-2xl rounded-sm overflow-hidden"
-              >
-                <button 
-                  onClick={closeModal} 
-                  className="absolute top-8 right-8 text-neutral-400 hover:text-black transition-colors z-20"
-                >
-                  <X size={28} />
-                </button>
-
-                <div className="p-10 md:p-16">
-                  {!isSubmitted ? (
-                    <motion.div key="form" initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
-                      <span className="text-green-600 font-black uppercase text-[11px] tracking-[0.4em] mb-4 block">
-                        Booking Request
-                      </span>
-                      <h3 className="text-4xl md:text-5xl font-black uppercase tracking-tighter mb-10 leading-[0.9]">
-                        {selectedService.title}
-                      </h3>
-                      
-                      <form className="space-y-8" onSubmit={handleBooking}>
-                        <div className="relative">
-                          <label className="text-[10px] font-black text-neutral-400 uppercase tracking-widest block mb-1">Full Name</label>
-                          <input 
-                            required 
-                            type="text" 
-                            className="w-full border-b-4 border-neutral-100 py-3 outline-none focus:border-green-600 font-bold text-xl transition-all placeholder:text-neutral-200" 
-                            placeholder="YOUR NAME" 
-                          />
-                        </div>
-                        <div className="relative">
-                          <label className="text-[10px] font-black text-neutral-400 uppercase tracking-widest block mb-1">Contact Phone</label>
-                          <input 
-                            required 
-                            type="tel" 
-                            className="w-full border-b-4 border-neutral-100 py-3 outline-none focus:border-green-600 font-bold text-xl transition-all placeholder:text-neutral-200" 
-                            placeholder="+91" 
-                          />
-                        </div>
-                        <button className="w-full bg-black text-white font-black uppercase py-6 tracking-[0.4em] hover:bg-green-600 transition-colors flex items-center justify-center gap-4 text-sm mt-4">
-                          Confirm Inquiry <Check size={20}/>
-                        </button>
-                      </form>
-                    </motion.div>
-                  ) : (
-                    <motion.div 
-                      key="success" 
-                      initial={{ scale: 0.9, opacity: 0 }} 
-                      animate={{ scale: 1, opacity: 1 }} 
-                      className="text-center py-10"
-                    >
-                      <div className="w-24 h-24 bg-green-500 text-white rounded-full flex items-center justify-center mx-auto mb-8 shadow-2xl shadow-green-200">
-                        <Check size={50}/>
-                      </div>
-                      <h3 className="text-5xl font-black uppercase tracking-tighter mb-4 italic">Sent!</h3>
-                      <p className="text-neutral-500 text-sm mb-12 leading-relaxed uppercase tracking-widest">
-                        Our coordination team will contact you in <span className="text-black font-black">15 Minutes</span>
-                      </p>
-                      <button 
-                        onClick={closeModal} 
-                        className="w-full bg-black text-white font-black uppercase py-5 tracking-widest hover:bg-neutral-800 transition-all"
-                      >
-                        Return to Catalogue
-                      </button>
-                    </motion.div>
-                  )}
-                </div>
-              </motion.div>
-            </div>
-          )}
-        </AnimatePresence>
+        {/* View All Button */}
+        <div className="mt-20 flex justify-center">
+          <Link
+            href="/services"
+            className="group relative flex items-center gap-4 px-12 py-6 bg-slate-950 text-white rounded-full font-black uppercase tracking-[0.2em] text-[10px] overflow-hidden transition-all hover:shadow-[0_20px_40px_rgba(0,0,0,0.1)] active:scale-95"
+          >
+            <span className="relative z-10">View Full Catalog</span>
+            <ArrowRight size={18} className="relative z-10 group-hover:translate-x-2 transition-transform" />
+            <div className="absolute inset-0 bg-green-600 translate-y-[101%] group-hover:translate-y-0 transition-transform duration-500 ease-out" />
+          </Link>
+        </div>
       </div>
+
+      {/* --- Refined Agency Modal --- */}
+      <AnimatePresence>
+        {selectedService && (
+          <Modal
+            service={selectedService}
+            close={() => setSelectedService(null)}
+          />
+        )}
+      </AnimatePresence>
     </section>
   );
 };
+
+const Modal = ({ service, close }: any) => (
+  <motion.div
+    initial={{ opacity: 0 }}
+    animate={{ opacity: 1 }}
+    exit={{ opacity: 0 }}
+    className="fixed inset-0 z-[100] flex items-center justify-center bg-slate-950/80 backdrop-blur-md p-6"
+  >
+    <motion.div
+      initial={{ y: 50, opacity: 0, scale: 0.95 }}
+      animate={{ y: 0, opacity: 1, scale: 1 }}
+      exit={{ y: 20, opacity: 0, scale: 0.98 }}
+      transition={{ type: "spring", damping: 25, stiffness: 300 }}
+      className="bg-white w-full max-w-4xl rounded-[3rem] shadow-2xl overflow-hidden relative flex flex-col md:flex-row"
+    >
+      {/* Image Side */}
+      <div className="w-full md:w-1/2 h-64 md:h-auto relative">
+        <img
+          src={service.image}
+          className="w-full h-full object-cover"
+          alt={service.title}
+        />
+        <div className="absolute inset-0 bg-linear-to-t from-slate-900/60 to-transparent" />
+      </div>
+
+      {/* Content Side */}
+      <div className="w-full md:w-1/2 p-10 md:p-16 flex flex-col justify-center">
+        <button
+          onClick={close}
+          className="absolute top-8 right-8 w-12 h-12 rounded-full border border-slate-100 flex items-center justify-center text-slate-400 hover:text-slate-900 hover:bg-slate-50 transition-all"
+        >
+          <X size={20} />
+        </button>
+
+        <div className="flex items-center gap-2 text-green-600 mb-6">
+          <ShieldCheck size={16} />
+          <span className="text-[10px] font-black uppercase tracking-widest">Premium Service</span>
+        </div>
+
+        <h2 className="text-4xl md:text-5xl font-black uppercase tracking-tighter text-slate-900 mb-6 leading-none">
+          {service.title}
+        </h2>
+        
+        <p className="text-slate-500 leading-relaxed mb-10 text-lg">
+          {service.desc}
+        </p>
+
+        <div className="grid grid-cols-1 gap-4">
+          <button className="w-full bg-slate-950 text-white py-5 rounded-2xl font-black uppercase tracking-widest text-xs hover:bg-green-600 transition-all shadow-xl hover:shadow-green-100">
+            Secure Appointment
+          </button>
+          <button
+            onClick={close}
+            className="w-full text-slate-400 text-[10px] font-black uppercase tracking-[0.2em] py-2 hover:text-slate-900 transition-colors"
+          >
+            Return to list
+          </button>
+        </div>
+      </div>
+    </motion.div>
+  </motion.div>
+);
 
 export default ServicesHome;

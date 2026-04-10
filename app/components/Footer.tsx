@@ -63,7 +63,7 @@ const Footer: React.FC<FooterProps> = ({ gtReady }) => {
   }, [activeLang]);
 
   return (
-    <footer className="bg-black text-white pt-16 pb-8 px-6 border-t border-white/10">
+    <footer className="bg-black text-white pt-16 pb-16  px-6 border-t border-white/10">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
         <div className="flex flex-col gap-6">
           <Link href="/#top">

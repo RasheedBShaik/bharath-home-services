@@ -10,15 +10,16 @@ export const getVideoAssets = (platform: 'youtube' | 'instagram', link: string) 
   }
 
   if (platform === 'instagram') {
-    // Clean the URL
-    const cleanLink = link.split('?')[0].replace(/\/$/, ""); 
+    // 1. Standardize the link (remove query params and trailing slashes)
+    const baseUrl = link.split('?')[0].replace(/\/$/, ""); 
     
     return {
-      /* Adding /media/ as a path rather than a query parameter 
-         tends to work better across different regions.
-      */
-      thumb: `${cleanLink}/media/?size=l`,
-      embed: `${cleanLink}/embed/`
+      // PRO TIP: Adding /media/?size=l is the official "unofficial" way,
+      // but it requires the post to be Public and not age-restricted.
+      thumb: `${baseUrl}/media/?size=l`,
+      
+      // We add /embed/ to the URL for the iframe
+      embed: `${baseUrl}/embed/`
     };
   }
 
