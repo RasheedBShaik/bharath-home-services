@@ -153,6 +153,10 @@ const Footer: React.FC<FooterProps> = ({ gtReady }) => {
 
       <div className="max-w-7xl mx-auto mt-16 pt-8 border-t border-white/5 text-center text-[10px] text-gray-500 tracking-widest uppercase">
         © 2026 - 2027 Bharathi Home Services.
+        <div className="text-center text-xs text-gray-500 py-2">
+          Demo website • Content and business details are for demonstration
+          purposes only.
+        </div>
       </div>
     </footer>
   );
