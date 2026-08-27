@@ -5,9 +5,9 @@ import { Mail, Phone, MapPin, Clock, Send } from "lucide-react";
 
 const Contact = () => {
   const info = [
-    { icon: <MapPin size={20} />, label: "Office", text: "Savitri Nagar, Nellore, AP" },
-    { icon: <Mail size={20} />, label: "Email", text: "bharathomeservices9@gmail.com" },
-    { icon: <Phone size={20} />, label: "Call", text: "+91 89858 33307" },
+    { icon: <MapPin size={20} />, label: "Office", text: " Nellore, AP" },
+    { icon: <Mail size={20} />, label: "Email", text: "test@gmail.com" },
+    { icon: <Phone size={20} />, label: "Call", text: "+91 1234567890" },
     { icon: <Clock size={20} />, label: "Hours", text: "8:00 AM - 8:00 PM" },
   ];
 
@@ -127,7 +127,8 @@ const Contact = () => {
           className="w-full h-125 rounded-[2.5rem] overflow-hidden shadow-2xl border border-neutral-100 relative group"
         >
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3875.55048256346!2d79.9824!3d14.4447!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTTCsDI2JzQxLjAiTiA3OcKwNTgnNTYuNiJF!5e0!3m2!1sen!2sin!4v1715000000000!5m2!1sen!2sin"
+            // src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3875.55048256346!2d79.9824!3d14.4447!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTTCsDI2JzQxLjAiTiA3OcKwNTgnNTYuNiJF!5e0!3m2!1sen!2sin!4v1715000000000!5m2!1sen!2sin"
+            src="https://www.google.com/maps?q=Nellore,+Andhra+Pradesh,+India&output=embed"
             width="100%"
             height="100%"
             style={{ border: 0 }}
@@ -140,8 +141,8 @@ const Contact = () => {
                 <MapPin size={24} />
              </div>
              <div>
-                <p className="text-sm font-black uppercase tracking-tighter text-black">Bharath Home Services</p>
-                <p className="text-[10px] font-bold text-neutral-500 uppercase tracking-widest">Savitri Nagar, Nellore</p>
+                <p className="text-sm font-black uppercase tracking-tighter text-black">Bharathi Home Services</p>
+                <p className="text-[10px] font-bold text-neutral-500 uppercase tracking-widest">Nellore</p>
              </div>
           </div>
         </motion.div>

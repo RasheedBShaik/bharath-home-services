@@ -100,7 +100,7 @@ const Footer: React.FC<FooterProps> = ({ gtReady }) => {
           </h3>
           <div className="flex flex-col gap-4 text-sm text-gray-400">
             <a
-              href="https://www.google.com/maps/search/?api=1&query=Savitri+Nagar,+Nellore,+AP+524004"
+              href="https://www.google.com/maps/place/Nellore,+Andhra+Pradesh/@14.4394814,79.9321467,13z/data=!3m1!4b1!4m6!3m5!1s0x3a4c8cca0e958771:0xd3036c2025161f55!8m2!3d14.4425987!4d79.986456!16zL20vMDF0Y2Rr?hl=en-US&entry=ttu&g_ep=EgoyMDI2MDgyNC4wIKXMDSoASAFQAw%3D%3D"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-3 border-white/20 hover:text-green-500 transition-all duration-300 group"
@@ -110,7 +110,7 @@ const Footer: React.FC<FooterProps> = ({ gtReady }) => {
                 <FaMapMarkerAlt className=" mt-1 shrink-0 group-hover:text-green-500 transition-colors" />
 
                 <span className="text-sm">
-                  Savitri Nagar, <br className="md:hidden" />
+                  {/* Savitri Nagar, <br className="md:hidden" /> */}
                   Nellore, AP 524004
                 </span>
               </div>
@@ -123,7 +123,7 @@ const Footer: React.FC<FooterProps> = ({ gtReady }) => {
                 {/* shrink-0 ensures the icon stays perfectly round/square even if text wraps */}
                 <FaPhoneAlt className="text-gray-400 shrink-0 group-hover:text-green-500 transition-colors size-4" />
 
-                <span className=" text-sm">+91 89858 33307</span>
+                <span className=" text-sm">+91 1234567890</span>
               </div>
             </a>
           </div>
@@ -152,7 +152,7 @@ const Footer: React.FC<FooterProps> = ({ gtReady }) => {
       </div>
 
       <div className="max-w-7xl mx-auto mt-16 pt-8 border-t border-white/5 text-center text-[10px] text-gray-500 tracking-widest uppercase">
-        © 2026 - 2027 Bharath Home Services.
+        © 2026 - 2027 Bharathi Home Services.
       </div>
     </footer>
   );

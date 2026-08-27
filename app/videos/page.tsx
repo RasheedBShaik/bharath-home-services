@@ -76,6 +76,7 @@ const VideosPage = () => {
                 ))}
               </div>
             </div>
+            <div>Demo content — videos and posts are sourced from publicly available YouTube and Instagram content for demonstration purposes.</div>
           </div>
         </div>
 

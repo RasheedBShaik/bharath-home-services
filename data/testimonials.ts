@@ -14,7 +14,7 @@ export const TESTIMONIALS: Testimonial[] = [
     name: "Rajesh Kumar",
     role: "Property Owner",
     company: "Nellore Residency",
-    content: "Bharath Services transformed our space with incredible attention to detail. Their professional approach to interior design is unmatched in Andhra Pradesh.",
+    content: "Bharathi Services transformed our space with incredible attention to detail. Their professional approach to interior design is unmatched in Andhra Pradesh.",
     image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=200&h=200&auto=format&fit=crop",
     rating: 5
   },
@@ -41,7 +41,7 @@ export const TESTIMONIALS: Testimonial[] = [
     name: "Rajesh Kumar",
     role: "Property Owner",
     company: "Nellore Residency",
-    content: "Bharath Services transformed our space with incredible attention to detail. Their professional approach to interior design is unmatched in Andhra Pradesh.",
+    content: "i Services transformed our space with incredible attention to detail. Their professional approach to interior design is unmatched in Andhra Pradesh.",
     image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=200&h=200&auto=format&fit=crop",
     rating: 5
   },

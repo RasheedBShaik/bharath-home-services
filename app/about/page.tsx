@@ -99,7 +99,7 @@ const AboutPage = () => {
                 transition={{ delay: 0.6, duration: 0.8 }}
                 className="text-lg md:text-2xl text-neutral-400 leading-relaxed font-medium mb-12"
               >
-                Based in Savitri Nagar, we offer articulate cleaning, plumbing,
+                Based in Nellore, we offer articulate cleaning, plumbing,
                 electricity, and painting services designed for modern homes.
               </motion.p>
 
@@ -117,7 +117,7 @@ const AboutPage = () => {
                 </Link>
 
                 <a
-                  href="https://www.google.com/maps/place/Savitri+Nagar,+Vanam+Thopu,+Nellore,+Andhra+Pradesh+524004,+India/@14.423584,79.974522,16z/data=!4m6!3m5!1s0x3a4cf322e9a9b8ef:0x4a032ec800590924!8m2!3d14.4235654!4d79.9736471!16s%2Fg%2F11bx5v185_?hl=en-US&entry=ttu&g_ep=EgoyMDI2MDQwNS4wIKXMDSoASAFQAw%3D%3D"
+                  href="https://www.google.com/maps/place/Nellore,+Nellore,+Andhra+Pradesh+524004,+India/@14.423584,79.974522,16z/data=!4m6!3m5!1s0x3a4cf322e9a9b8ef:0x4a032ec800590924!8m2!3d14.4235654!4d79.9736471!16s%2Fg%2F11bx5v185_?hl=en-US&entry=ttu&g_ep=EgoyMDI2MDQwNS4wIKXMDSoASAFQAw%3D%3D"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-4 text-white/60 hover:text-green-500 transition-colors group"
@@ -199,7 +199,7 @@ const AboutPage = () => {
               <p>
                 At{" "}
                 <span className="text-black font-black">
-                  Bharath Home Services
+                  Bharathi Home Services
                 </span>
                 , we understand how important it is to maintain a healthy
                 environment. A dirty tank isn't just an eyesore—it's a source of
@@ -265,7 +265,7 @@ const AboutPage = () => {
 
       {/* Decorative Background Text */}
       <div className="fixed top-1/2 left-0 -translate-y-1/2 -rotate-90 origin-left text-[15vh] font-black text-black/2 pointer-events-none select-none z-0">
-        BHARATH SERVICES
+        BHARATHI SERVICES
       </div>
     </div>
   );

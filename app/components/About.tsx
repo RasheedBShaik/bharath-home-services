@@ -75,7 +75,7 @@ const AboutComponent = () => {
                 <div className="w-8 h-px bg-green-500/50" />
                 <MapPin size={14} className="animate-pulse" />
                 <span className="text-[10px] font-black uppercase tracking-[0.5em]">
-                  Savitri Nagar • Nellore
+                  Nellore, Andhra Pradesh
                 </span>
               </motion.div>
 
@@ -147,7 +147,7 @@ const AboutComponent = () => {
         style={{ x: bgTextX }}
         className="absolute -bottom-20 left-0 text-[25rem] font-black text-white/2 pointer-events-none select-none whitespace-nowrap"
       >
-        BHARATH SERVICES 2026
+        BHARATHI SERVICES 2026
       </motion.div>
     </section>
   );

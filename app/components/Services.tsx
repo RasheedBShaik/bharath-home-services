@@ -79,7 +79,7 @@ const ServicesHome = () => {
             href="/services"
             className="group relative flex items-center gap-4 px-12 py-6 bg-slate-950 text-white rounded-full font-black uppercase tracking-[0.2em] text-[10px] overflow-hidden transition-all hover:shadow-[0_20px_40px_rgba(0,0,0,0.1)] active:scale-95"
           >
-            <span className="relative z-10">View Full Catalog</span>
+            <span className="relative z-10">View All Services</span>
             <ArrowRight size={18} className="relative z-10 group-hover:translate-x-2 transition-transform" />
             <div className="absolute inset-0 bg-green-600 translate-y-[101%] group-hover:translate-y-0 transition-transform duration-500 ease-out" />
           </Link>
