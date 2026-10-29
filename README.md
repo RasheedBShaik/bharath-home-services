@@ -1,36 +1,158 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-## Getting Started
+# 🏠 Bharathi Home Services
 
-First, run the development server:
+A modern home-maintenance website showcasing professional cleaning and home-care services in Nellore, Andhra Pradesh.
+
+🌐 **Live Website:** [Visit Bharathi Home Services](https://bharath-home-services.vercel.app/)
+
+---
+
+## 📌 Overview
+
+Bharathi Home Services is a web project designed to present home-maintenance services through a modern, visually engaging interface. It helps visitors explore available services, view project galleries, discover videos, read testimonials, and find contact information.
+
+The website also provides multilingual navigation to make its content accessible to a wider audience.
+
+## ✨ Features
+
+- 🏡 **Modern Homepage** — A visually engaging introduction to the business
+- 🧹 **Home Cleaning Services** — Showcases residential cleaning solutions
+- 🐜 **Pest Control** — Dedicated pest-control service information
+- 🚿 **Water Tank Cleaning** — Highlights rooftop water-tank cleaning
+- ❄️ **AC Cleaning** — Presents air-conditioning cleaning services
+- 🌀 **Fan Cleaning** — Dedicated ceiling-fan cleaning service
+- 🍳 **Kitchen Cleaning** — Showcases kitchen-cleaning services
+- 🖼️ **Project Gallery** — Displays featured work and projects
+- 🎥 **Video Library** — Includes video and social-media content
+- ⭐ **Testimonials** — Displays customer testimonial content
+- 🌐 **Multilingual Interface** — Offers multiple language options
+- 📱 **Responsive Experience** — Designed for a modern web browsing experience
+
+## 🛠️ Tech Stack
+
+| Technology | Purpose |
+|---|---|
+| Next.js | React-based web framework |
+| React | User interface development |
+| TypeScript | Type-safe JavaScript |
+| Tailwind CSS | Utility-first styling |
+| Framer Motion | Animations and motion effects |
+| Lucide React | Icon library |
+| next-intl | Internationalization support |
+| Vercel Analytics | Website analytics integration |
+
+## 🚀 Live Demo
+
+Explore the deployed website:
+
+**[Open Bharathi Home Services →](https://bharath-home-services.vercel.app/)**
+
+Browse the service listings, gallery, videos, testimonials, and language options.
+
+## ⚙️ Getting Started
+
+### Prerequisites
+
+Make sure you have installed:
+
+- Node.js
+- pnpm
+- Git (optional)
+
+### Installation
+
+**1. Clone the repository**
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/RasheedBShaik/bharath-home-services.git
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+**2. Navigate to the project directory**
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+cd bharath-home-services
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+**3. Install dependencies**
 
-## Learn More
+```bash
+pnpm install
+```
 
-To learn more about Next.js, take a look at the following resources:
+**4. Start the development server**
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+pnpm dev
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+**5. Open the application**
 
-## Deploy on Vercel
+Visit the local URL displayed in your terminal, usually:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+`http://localhost:3000`
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Production Build
+
+Build the application:
+
+```bash
+pnpm build
+```
+
+Start the production server:
+
+```bash
+pnpm start
+```
+
+### Code Quality
+
+Run ESLint:
+
+```bash
+pnpm lint
+```
+
+## 📁 Project Structure
+
+```text
+bharath-home-services/
+│
+├── app/                    # Next.js application routes and UI
+├── data/                   # Project data
+├── public/
+│   └── hero/               # Hero-section assets
+├── utils/                  # Shared utility functions
+│
+├── .gitignore              # Git ignore rules
+├── eslint.config.mjs       # ESLint configuration
+├── next.config.ts          # Next.js configuration
+├── package.json            # Dependencies and scripts
+├── pnpm-lock.yaml          # Locked dependency versions
+├── pnpm-workspace.yaml     # pnpm workspace configuration
+├── postcss.config.mjs      # PostCSS configuration
+├── tsconfig.json           # TypeScript configuration
+└── README.md               # Project documentation
+```
+
+## 💡 Future Improvements
+
+Potential enhancements, depending on the intended functionality, include:
+
+- Online service booking
+- Appointment scheduling
+- Service request tracking
+- Customer account management
+- Booking confirmation notifications
+- Customer enquiry management
+- Improved accessibility and performance
+
+## 👨‍💻 Author
+
+**Shaik Rasheed Basha**
+
+- GitHub: [@RasheedBShaik](https://github.com/RasheedBShaik)
+
+## 📄 Project Note
+
+The deployed website currently identifies itself as a demonstration website. Business details, testimonials, and contact information should be verified before being treated as real operational information.
